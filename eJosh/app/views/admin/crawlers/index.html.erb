@@ -1,0 +1,55 @@
+<div id = "wrapper">
+  <%= render :partial => '/layouts/admin/top' %>
+  <div id = "container">
+    <%= render :partial => '/layouts/admin/category' %>
+    <div id = "rightinner">
+      <div id = "titlegreenleft">
+        <div class="greentitle"><img src="/images/nav.png" style="vertical-align:middle; margin-right:8px;" />Navigation Management</div>
+      </div>
+      <br/><br/>
+      <div id = "matterinner">
+        <div id = "innerlinks">
+          <%= link_to "Header", admin_navigations_path(:scope => HEADER_NAVIGATION_TYPE), :class => selected_style(params[:scope], HEADER_NAVIGATION_TYPE)%> | 
+          <%= link_to "Footer", admin_navigations_path(:scope => FOOTER_NAVIGATION_TYPE), :class => selected_style(params[:scope], FOOTER_NAVIGATION_TYPE) %> |
+          <%= link_to "Quick Links", admin_navigations_path(:scope => QUICK_LINK_NAVIGATION_TYPE), :class => selected_style(params[:scope], QUICK_LINK_NAVIGATION_TYPE) %> |
+          <%= link_to "Crawlers", admin_crawlers_path, :class => selected_style(params[:scope], CRAWLER_NAVIGATION_TYPE) %>
+        </div>
+        <br/><br/>
+        <table width="601" border="1" cellspacing="0" cellpadding="0" bordercolor="#c5c3c3">
+          <tr>
+            <th width="54" align="center" valign="middle">Sr. No.&nbsp;</th>
+            <th width="94" align="center" valign="middle">Name</th>
+            <th width="83" align="center" valign="middle">Enabled</th>
+            <th width="111" align="center" valign="middle">Action</th>
+          </tr>
+          <% @crawlers.each do |crawler| %>
+            <tr>
+              <td align="center" valign="middle"><%= crawler.id %></td>
+              <td align="center" valign="middle"><%= crawler.name %></td>
+              <td align="center" valign="middle">
+                <% if crawler.is_enabled %>
+                  <%= link_to image_tag("right.jpg", :alt => "Enabled", :border => 0, :title => "Disable"), enable_admin_crawler_path(crawler, :scope => params[:scope], :state => false) %>
+                <% else %>
+                  <%= link_to image_tag("cross.jpg", :alt => "Enabled", :border => 0, :title => "Enable"), enable_admin_crawler_path(crawler,:scope => params[:scope], :state => true) %>
+                <% end %>
+              </td>
+              <td align="center" valign="middle" class="tablelinks">
+                <%= link_to "Edit", edit_admin_crawler_path(crawler, :scope => params[:scope]) %>|
+                <%= link_to "Delete", admin_crawler_path(crawler, :scope => params[:scope]), :method => "delete" %>
+              </td>
+            </tr>
+          <% end %>
+        </table>
+        <%= will_paginate @crawlers %>  
+        <br/>
+        <div class="greenbut" style="margin-left:270px;">
+          <%= link_to "Add New", new_admin_crawler_path(:scope => params[:scope]), :rel => "#overlay10" %>
+        </div>
+        <br/>
+        <br/>
+      </div>
+      <div id = "rightinnerbottom"></div>
+    </div>
+    <div style="clear:both"></div>
+  </div><br/><br/><br/>
+</div>

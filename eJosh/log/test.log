@@ -1,0 +1,509 @@
+** acts_as_taggable_on: initialized properly.
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mTheme Load (0.3ms)[0m   [0;1mSELECT * FROM `themes` WHERE (is_selected = 1) LIMIT 1[0m
+  [4;35;1mTheme Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `themes`[0m
+  [4;36;1mTheme Load (0.2ms)[0m   [0;1mSELECT * FROM `themes` WHERE (is_selected = 1) LIMIT 1[0m
+  [4;35;1mColor Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `colors`[0m
+  [4;36;1mColor Load (0.2ms)[0m   [0;1mSELECT * FROM `colors` WHERE (`colors`.`id` = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EmployeesController#index (for 192.168.1.34 at 2009-12-10 19:16:24) [GET]
+  [4;36;1mEmployee Load (0.3ms)[0m   [0;1mSELECT * FROM `employees` [0m
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mRole Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`id` = 1) [0m
+Rendering template within layouts/admin/home
+Rendering employees/index
+Rendered layouts/admin/_top (0.3ms)
+  [4;35;1mExtension Load (0.2ms)[0m   [0mSELECT * FROM `extensions` [0m
+  [4;36;1mExtension Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `extensions`[0m
+Rendered plugins/_category (3.6ms)
+Rendered layouts/admin/_footer (0.8ms)
+Completed in 22ms (View: 10, DB: 3) | 200 OK [http://192.168.1.100/employees]
+
+
+Processing HierarchiesController#index (for 192.168.1.34 at 2009-12-10 19:16:27) [GET]
+  [4;35;1mHierarchy Load (0.2ms)[0m   [0mSELECT * FROM `hierarchies` [0m
+Rendering template within layouts/admin/home
+Rendering hierarchies/index
+Rendered layouts/admin/_top (0.0ms)
+  [4;36;1mExtension Load (0.1ms)[0m   [0;1mSELECT * FROM `extensions` [0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`id` = 1) [0m
+Rendered plugins/_category (1.6ms)
+  [4;35;1mHierarchy Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `hierarchies`[0m
+  [4;36;1mEmployee Load (0.3ms)[0m   [0;1mSELECT * FROM `employees` [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `employees` [0m
+Rendered hierarchies/_form (3.6ms)
+Rendered layouts/admin/_footer (0.3ms)
+Completed in 12ms (View: 8, DB: 1) | 200 OK [http://192.168.1.100/hierarchies]
+
+
+Processing Admin::ExtensionsController#index (for 192.168.1.34 at 2009-12-10 19:16:33) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.1ms)[0m   [0mSELECT * FROM `roles` WHERE (`roles`.`id` = 1) [0m
+  [4;36;1mExtension Load (0.1ms)[0m   [0;1mSELECT * FROM `extensions` [0m
+Rendering template within layouts/admin/home
+Rendering admin/extensions/index
+Rendered layouts/admin/_tiny_mce (1.1ms)
+Rendered layouts/admin/_top (0.0ms)
+Rendered layouts/admin/_category (1.4ms)
+Rendered layouts/admin/_footer (0.3ms)
+Completed in 10ms (View: 7, DB: 0) | 200 OK [http://192.168.1.100/admin/extensions]
+
+
+Processing ApplicationController#index (for 192.168.1.34 at 2009-12-10 19:16:33) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/tiny_mce/plugins/imagemanager/editor_plugin.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.1.34 at 2009-12-10 19:16:33) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/tiny_mce/plugins/filemanager/editor_plugin.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::ExtensionsController#update_plugin (for 192.168.1.34 at 2009-12-10 19:16:36) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`id` = 1) [0m
+  [4;35;1mExtension Load (0.1ms)[0m   [0mSELECT * FROM `extensions` WHERE (`extensions`.`id` = 1) [0m
+Redirected to http://192.168.1.100:11115/admin/extensions
+Completed in 15087ms (DB: 0) | 302 Found [http://192.168.1.100/admin/extensions/1/update_plugin]
+
+
+Processing Admin::ExtensionsController#index (for 192.168.1.34 at 2009-12-10 19:16:51) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.1ms)[0m   [0mSELECT * FROM `roles` WHERE (`roles`.`id` = 1) [0m
+  [4;36;1mExtension Load (0.1ms)[0m   [0;1mSELECT * FROM `extensions` [0m
+Rendering template within layouts/admin/home
+Rendering admin/extensions/index
+Rendered layouts/admin/_tiny_mce (0.1ms)
+Rendered layouts/admin/_top (0.1ms)
+Rendered layouts/admin/_category (1.0ms)
+Rendered layouts/admin/_footer (0.2ms)
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://192.168.1.100/admin/extensions]
+
+
+Processing ApplicationController#index (for 192.168.1.34 at 2009-12-10 19:16:51) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/tiny_mce/plugins/imagemanager/editor_plugin.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.1.34 at 2009-12-10 19:16:51) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/tiny_mce/plugins/filemanager/editor_plugin.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PluginsController#index (for 192.168.1.34 at 2009-12-10 19:16:56) [GET]
+  [4;35;1mExtension Load (0.2ms)[0m   [0mSELECT * FROM `extensions` LIMIT 1[0m
+Redirected to http://192.168.1.100:11115/employees
+Completed in 3ms (DB: 0) | 302 Found [http://192.168.1.100/plugins]
+
+
+Processing EmployeesController#index (for 192.168.1.34 at 2009-12-10 19:16:56) [GET]
+  [4;36;1mEmployee Load (0.1ms)[0m   [0;1mSELECT * FROM `employees` [0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`id` = 1) [0m
+Rendering template within layouts/admin/home
+Rendering employees/index
+Rendered layouts/admin/_top (0.1ms)
+  [4;35;1mExtension Load (0.1ms)[0m   [0mSELECT * FROM `extensions` [0m
+Rendered plugins/_category (0.7ms)
+Rendered layouts/admin/_footer (0.2ms)
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://192.168.1.100/employees]
+
+
+Processing HierarchiesController#index (for 192.168.1.34 at 2009-12-10 19:16:57) [GET]
+  [4;36;1mHierarchy Load (0.1ms)[0m   [0;1mSELECT * FROM `hierarchies` [0m
+Rendering template within layouts/admin/home
+Rendering hierarchies/index
+Rendered layouts/admin/_top (0.1ms)
+  [4;35;1mExtension Load (0.1ms)[0m   [0mSELECT * FROM `extensions` [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.1ms)[0m   [0mSELECT * FROM `roles` WHERE (`roles`.`id` = 1) [0m
+Rendered plugins/_category (1.8ms)
+  [4;36;1mEmployee Load (0.1ms)[0m   [0;1mSELECT * FROM `employees` [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `employees` [0m
+Rendered hierarchies/_form (1.0ms)
+Rendered layouts/admin/_footer (0.2ms)
+Completed in 5ms (View: 4, DB: 1) | 200 OK [http://192.168.1.100/hierarchies]
+
+
+Processing HierarchiesController#index (for 192.168.1.34 at 2009-12-10 19:17:06) [GET]
+  [4;36;1mHierarchy Load (0.2ms)[0m   [0;1mSELECT * FROM `hierarchies` [0m
+Rendering template within layouts/admin/home
+Rendering hierarchies/index
+Rendered layouts/admin/_top (0.1ms)
+  [4;35;1mExtension Load (0.1ms)[0m   [0mSELECT * FROM `extensions` [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.1ms)[0m   [0mSELECT * FROM `roles` WHERE (`roles`.`id` = 1) [0m
+Rendered plugins/_category (1.8ms)
+  [4;36;1mEmployee Load (0.1ms)[0m   [0;1mSELECT * FROM `employees` [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `employees` [0m
+Rendered hierarchies/_form (1.0ms)
+Rendered layouts/admin/_footer (0.2ms)
+Completed in 5ms (View: 4, DB: 1) | 200 OK [http://192.168.1.100/hierarchies]
+
+
+Processing EmployeesController#index (for 192.168.1.34 at 2009-12-10 19:17:08) [GET]
+  [4;36;1mEmployee Load (0.2ms)[0m   [0;1mSELECT * FROM `employees` [0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`id` = 1) [0m
+Rendering template within layouts/admin/home
+Rendering employees/index
+Rendered layouts/admin/_top (0.0ms)
+  [4;35;1mExtension Load (0.1ms)[0m   [0mSELECT * FROM `extensions` [0m
+Rendered plugins/_category (0.6ms)
+Rendered layouts/admin/_footer (0.1ms)
+Completed in 4ms (View: 2, DB: 1) | 200 OK [http://192.168.1.100/employees]
+
+
+Processing Admin::ExtensionsController#index (for 192.168.1.34 at 2009-12-10 19:17:09) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.1ms)[0m   [0mSELECT * FROM `roles` WHERE (`roles`.`id` = 1) [0m
+  [4;36;1mExtension Load (0.1ms)[0m   [0;1mSELECT * FROM `extensions` [0m
+Rendering template within layouts/admin/home
+Rendering admin/extensions/index
+Rendered layouts/admin/_tiny_mce (0.1ms)
+Rendered layouts/admin/_top (0.0ms)
+Rendered layouts/admin/_category (0.6ms)
+Rendered layouts/admin/_footer (0.1ms)
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://192.168.1.100/admin/extensions]
+
+
+Processing ApplicationController#index (for 192.168.1.34 at 2009-12-10 19:17:10) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/tiny_mce/plugins/imagemanager/editor_plugin.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.1.34 at 2009-12-10 19:17:10) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/tiny_mce/plugins/filemanager/editor_plugin.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::ExtensionsController#update_plugin (for 192.168.1.34 at 2009-12-10 19:17:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`id` = 1) [0m
+  [4;35;1mExtension Load (0.1ms)[0m   [0mSELECT * FROM `extensions` WHERE (`extensions`.`id` = 1) [0m
+Redirected to http://192.168.1.100:11115/admin/extensions
+Completed in 13933ms (DB: 0) | 302 Found [http://192.168.1.100/admin/extensions/1/update_plugin]
+
+
+Processing Admin::ExtensionsController#index (for 192.168.1.34 at 2009-12-10 19:17:29) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.1ms)[0m   [0mSELECT * FROM `roles` WHERE (`roles`.`id` = 1) [0m
+  [4;36;1mExtension Load (0.1ms)[0m   [0;1mSELECT * FROM `extensions` [0m
+Rendering template within layouts/admin/home
+Rendering admin/extensions/index
+Rendered layouts/admin/_tiny_mce (0.1ms)
+Rendered layouts/admin/_top (0.0ms)
+Rendered layouts/admin/_category (0.7ms)
+Rendered layouts/admin/_footer (0.1ms)
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://192.168.1.100/admin/extensions]
+
+
+Processing ApplicationController#index (for 192.168.1.34 at 2009-12-10 19:17:29) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/tiny_mce/plugins/imagemanager/editor_plugin.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.1.34 at 2009-12-10 19:17:29) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/tiny_mce/plugins/filemanager/editor_plugin.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::ExtensionsController#index (for 192.168.1.34 at 2009-12-10 19:17:45) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`id` = 1) [0m
+  [4;35;1mExtension Load (0.1ms)[0m   [0mSELECT * FROM `extensions` [0m
+Rendering template within layouts/admin/home
+Rendering admin/extensions/index
+Rendered layouts/admin/_tiny_mce (0.1ms)
+Rendered layouts/admin/_top (0.0ms)
+Rendered layouts/admin/_category (0.6ms)
+Rendered layouts/admin/_footer (0.1ms)
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://192.168.1.100/admin/extensions]
+
+
+Processing ApplicationController#index (for 192.168.1.34 at 2009-12-10 19:17:45) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/tiny_mce/plugins/imagemanager/editor_plugin.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.1.34 at 2009-12-10 19:17:45) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/tiny_mce/plugins/filemanager/editor_plugin.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PluginsController#index (for 192.168.1.34 at 2009-12-10 19:17:46) [GET]
+  [4;36;1mExtension Load (0.1ms)[0m   [0;1mSELECT * FROM `extensions` LIMIT 1[0m
+Redirected to http://192.168.1.100:11115/employees
+Completed in 1ms (DB: 0) | 302 Found [http://192.168.1.100/plugins]
+
+
+Processing EmployeesController#index (for 192.168.1.34 at 2009-12-10 19:17:46) [GET]
+  [4;35;1mEmployee Load (0.1ms)[0m   [0mSELECT * FROM `employees` [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.1ms)[0m   [0mSELECT * FROM `roles` WHERE (`roles`.`id` = 1) [0m
+Rendering template within layouts/admin/home
+Rendering employees/index
+Rendered layouts/admin/_top (0.0ms)
+  [4;36;1mExtension Load (0.1ms)[0m   [0;1mSELECT * FROM `extensions` [0m
+Rendered plugins/_category (0.6ms)
+Rendered layouts/admin/_footer (0.1ms)
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://192.168.1.100/employees]
+
+
+Processing HierarchiesController#index (for 192.168.1.34 at 2009-12-10 19:17:47) [GET]
+  [4;35;1mHierarchy Load (0.2ms)[0m   [0mSELECT * FROM `hierarchies` [0m
+Rendering template within layouts/admin/home
+Rendering hierarchies/index
+Rendered layouts/admin/_top (0.0ms)
+  [4;36;1mExtension Load (0.1ms)[0m   [0;1mSELECT * FROM `extensions` [0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`id` = 1) [0m
+Rendered plugins/_category (1.6ms)
+  [4;35;1mEmployee Load (0.1ms)[0m   [0mSELECT * FROM `employees` [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `employees` [0m
+Rendered hierarchies/_form (0.9ms)
+Rendered layouts/admin/_footer (0.1ms)
+Completed in 5ms (View: 4, DB: 1) | 200 OK [http://192.168.1.100/hierarchies]
+
+
+Processing Admin::ExtensionsController#index (for 192.168.1.34 at 2009-12-10 19:17:49) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`id` = 1) [0m
+  [4;35;1mExtension Load (0.1ms)[0m   [0mSELECT * FROM `extensions` [0m
+Rendering template within layouts/admin/home
+Rendering admin/extensions/index
+Rendered layouts/admin/_tiny_mce (0.0ms)
+Rendered layouts/admin/_top (0.0ms)
+Rendered layouts/admin/_category (0.6ms)
+Rendered layouts/admin/_footer (0.1ms)
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://192.168.1.100/admin/extensions]
+
+
+Processing ApplicationController#index (for 192.168.1.34 at 2009-12-10 19:17:49) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/tiny_mce/plugins/imagemanager/editor_plugin.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.1.34 at 2009-12-10 19:17:49) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/tiny_mce/plugins/filemanager/editor_plugin.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::ExtensionsController#update_plugin (for 192.168.1.34 at 2009-12-10 19:18:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.1ms)[0m   [0mSELECT * FROM `roles` WHERE (`roles`.`id` = 1) [0m
+  [4;36;1mExtension Load (0.1ms)[0m   [0;1mSELECT * FROM `extensions` WHERE (`extensions`.`id` = 1) [0m
+Redirected to http://192.168.1.100:11115/admin/extensions
+Completed in 13829ms (DB: 0) | 302 Found [http://192.168.1.100/admin/extensions/1/update_plugin]
+
+
+Processing Admin::ExtensionsController#index (for 192.168.1.34 at 2009-12-10 19:18:22) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`id` = 1) [0m
+  [4;35;1mExtension Load (0.1ms)[0m   [0mSELECT * FROM `extensions` [0m
+Rendering template within layouts/admin/home
+Rendering admin/extensions/index
+Rendered layouts/admin/_tiny_mce (0.1ms)
+Rendered layouts/admin/_top (0.1ms)
+Rendered layouts/admin/_category (1.1ms)
+Rendered layouts/admin/_footer (0.2ms)
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://192.168.1.100/admin/extensions]
+
+
+Processing ApplicationController#index (for 192.168.1.34 at 2009-12-10 19:18:22) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/tiny_mce/plugins/imagemanager/editor_plugin.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.1.34 at 2009-12-10 19:18:22) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/tiny_mce/plugins/filemanager/editor_plugin.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+** acts_as_taggable_on: initialized properly.
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mTheme Load (0.2ms)[0m   [0;1mSELECT * FROM `themes` WHERE (is_selected = 1) LIMIT 1[0m
+  [4;35;1mTheme Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `themes`[0m
+  [4;36;1mTheme Load (0.1ms)[0m   [0;1mSELECT * FROM `themes` WHERE (is_selected = 1) LIMIT 1[0m
+  [4;35;1mColor Columns (0.4ms)[0m   [0mSHOW FIELDS FROM `colors`[0m
+  [4;36;1mColor Load (0.1ms)[0m   [0;1mSELECT * FROM `colors` WHERE (`colors`.`id` = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ExtensionsController#index (for 192.168.1.34 at 2009-12-10 19:22:43) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mRole Columns (0.4ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (0.1ms)[0m   [0mSELECT * FROM `roles` WHERE (`roles`.`id` = 1) [0m
+  [4;36;1mExtension Load (0.1ms)[0m   [0;1mSELECT * FROM `extensions` [0m
+Rendering template within layouts/admin/home
+Rendering admin/extensions/index
+Rendered layouts/admin/_tiny_mce (1.5ms)
+Rendered layouts/admin/_top (0.3ms)
+Rendered layouts/admin/_category (1.6ms)
+  [4;35;1mExtension Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `extensions`[0m
+Rendered layouts/admin/_footer (0.8ms)
+Completed in 20ms (View: 12, DB: 2) | 200 OK [http://192.168.1.100/admin/extensions]
+
+
+Processing ApplicationController#index (for 192.168.1.34 at 2009-12-10 19:22:43) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/tiny_mce/plugins/imagemanager/editor_plugin.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.1.34 at 2009-12-10 19:22:43) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/tiny_mce/plugins/filemanager/editor_plugin.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PluginsController#index (for 192.168.1.34 at 2009-12-10 19:22:45) [GET]
+  [4;36;1mExtension Load (0.2ms)[0m   [0;1mSELECT * FROM `extensions` LIMIT 1[0m
+Redirected to http://192.168.1.100:11115/employees
+Completed in 2ms (DB: 0) | 302 Found [http://192.168.1.100/plugins]
+
+
+Processing EmployeesController#index (for 192.168.1.34 at 2009-12-10 19:22:45) [GET]
+  [4;35;1mEmployee Load (0.2ms)[0m   [0mSELECT * FROM `employees` [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.1ms)[0m   [0mSELECT * FROM `roles` WHERE (`roles`.`id` = 1) [0m
+Rendering template within layouts/admin/home
+Rendering employees/index
+Rendered layouts/admin/_top (0.0ms)
+  [4;36;1mExtension Load (0.1ms)[0m   [0;1mSELECT * FROM `extensions` [0m
+Rendered plugins/_category (1.2ms)
+Rendered layouts/admin/_footer (45.1ms)
+Completed in 57ms (View: 50, DB: 0) | 200 OK [http://192.168.1.100/employees]
+
+
+Processing HierarchiesController#index (for 192.168.1.34 at 2009-12-10 19:22:47) [GET]
+  [4;35;1mHierarchy Load (0.1ms)[0m   [0mSELECT * FROM `hierarchies` [0m
+Rendering template within layouts/admin/home
+Rendering hierarchies/index
+Rendered layouts/admin/_top (0.0ms)
+  [4;36;1mExtension Load (0.1ms)[0m   [0;1mSELECT * FROM `extensions` [0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`id` = 1) [0m
+Rendered plugins/_category (1.9ms)
+Rendered layouts/admin/_footer (0.4ms)
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://192.168.1.100/hierarchies]
+
+
+Processing DepartmentsController#index (for 192.168.1.34 at 2009-12-10 19:22:49) [GET]
+  [4;35;1mDepartment Load (0.4ms)[0m   [0mSELECT * FROM `departments` [0m
+Rendering template within layouts/admin/home
+Rendering departments/index
+Rendered layouts/admin/_top (0.1ms)
+  [4;36;1mExtension Load (0.1ms)[0m   [0;1mSELECT * FROM `extensions` [0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`id` = 1) [0m
+Rendered plugins/_category (1.8ms)
+Rendered layouts/admin/_footer (0.4ms)
+Completed in 11ms (View: 5, DB: 1) | 200 OK [http://192.168.1.100/departments]
+
+
+Processing DesignationsController#index (for 192.168.1.34 at 2009-12-10 19:22:50) [GET]
+  [4;35;1mDesignation Load (0.1ms)[0m   [0mSELECT * FROM `designations` [0m
+Rendering template within layouts/admin/home
+Rendering designations/index
+Rendered layouts/admin/_top (0.0ms)
+  [4;36;1mExtension Load (0.1ms)[0m   [0;1mSELECT * FROM `extensions` [0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`id` = 1) [0m
+Rendered plugins/_category (1.7ms)
+Rendered layouts/admin/_footer (0.3ms)
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://192.168.1.100/designations]
+
+
+Processing EmployeesController#index (for 192.168.1.34 at 2009-12-10 19:22:50) [GET]
+  [4;35;1mEmployee Load (0.1ms)[0m   [0mSELECT * FROM `employees` [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.1ms)[0m   [0mSELECT * FROM `roles` WHERE (`roles`.`id` = 1) [0m
+Rendering template within layouts/admin/home
+Rendering employees/index
+Rendered layouts/admin/_top (0.0ms)
+  [4;36;1mExtension Load (0.1ms)[0m   [0;1mSELECT * FROM `extensions` [0m
+Rendered plugins/_category (0.6ms)
+Rendered layouts/admin/_footer (0.1ms)
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://192.168.1.100/employees]
+
+
+Processing DesignationsController#index (for 192.168.1.34 at 2009-12-10 19:22:53) [GET]
+  [4;35;1mDesignation Load (0.1ms)[0m   [0mSELECT * FROM `designations` [0m
+Rendering template within layouts/admin/home
+Rendering designations/index
+Rendered layouts/admin/_top (0.0ms)
+  [4;36;1mExtension Load (0.1ms)[0m   [0;1mSELECT * FROM `extensions` [0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`id` = 1) [0m
+Rendered plugins/_category (1.6ms)
+Rendered layouts/admin/_footer (0.1ms)
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://192.168.1.100/designations]
+
+
+Processing HierarchiesController#index (for 192.168.1.34 at 2009-12-10 19:22:53) [GET]
+  [4;35;1mHierarchy Load (0.1ms)[0m   [0mSELECT * FROM `hierarchies` [0m
+Rendering template within layouts/admin/home
+Rendering hierarchies/index
+Rendered layouts/admin/_top (0.0ms)
+  [4;36;1mExtension Load (0.1ms)[0m   [0;1mSELECT * FROM `extensions` [0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`id` = 1) [0m
+Rendered plugins/_category (1.6ms)
+Rendered layouts/admin/_footer (0.1ms)
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://192.168.1.100/hierarchies]

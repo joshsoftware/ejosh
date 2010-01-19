@@ -1,0 +1,45 @@
+<table width="500" border="0" align="left" cellpadding="0" cellspacing="0" style="margin-left:20px;">
+  <tr>
+    <td width="161" align="right" valign="middle"><strong>Select Logo  : </strong></td>
+    <td width="333" align="left" valign="middle" class="tablelinks" style="margin-left:17px;">
+      <%= site.file_field "logo", :size => 20, :style => "width:273px; border:1px solid #a1a0a0; background-color:#f7f7f7; margin-left:29px;"%>	
+    </td>
+  </tr>
+  <tr>
+    <td align="right" valign="middle"><strong>Company Name  : </strong></td>
+    <td align="left" valign="middle" class="tablelinks">
+      <label>
+        <%= site.text_field :company_name, :style => "width:273px; border:1px solid #a1a0a0; background-color:#f7f7f7; margin-left:29px;" %> 
+    </label></td>   
+  </tr>
+  <tr>
+    <td align="right" valign="middle"><strong>Tagline / Slogan  : </strong></td>
+    <td align="left" valign="middle" class="tablelinks">
+      <label>
+        <%= site.text_field :tagline, :style => "width:273px; border:1px solid #a1a0a0; background-color:#f7f7f7; margin-left:29px;" %>
+      </label>
+    </td>
+  </tr>
+  <tr>
+    <td align="right" valign="middle"><strong>Copyright Info  : </strong></td>
+    <td align="left" valign="middle" class="tablelinks"><label>
+        <%= site.text_field :copyright_info, :style => "width:273px; border:1px solid #a1a0a0; background-color:#f7f7f7; margin-left:29px;" %>
+      </label>
+    </td>
+  </tr>
+  <tr>
+    <td align="right" valign="middle"><strong>Description  : </strong></td>
+    <td align="left" valign="middle" class="tablelinks"><label>
+        <%= site.text_area :description, :style => "border:1px solid #a1a0a0; background-color:#f7f7f7; margin-left:29px;", :size => "32x10" %>
+      </label>
+    </td>
+  </tr>
+  <tr>
+    <td align="right" valign="middle">&nbsp;</td>
+    <td align="left" valign="middle">
+      <div class="greenbut" style="margin-left:22px;margin-top:10px">
+        <%= submit_tag "OK", :class => "greensubbut",:style => "magrin-left:22px; width:50px" %>
+      </div>
+    </td>
+  </tr>
+</table>

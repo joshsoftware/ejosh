@@ -1,0 +1,51 @@
+#blue{
+	background-image:url(../images/line_green.jpg);
+	background-repeat:repeat-x;
+	height:149px;
+	width:1003px;
+	margin:auto;
+}
+#bluenav{
+	background-image:url(../images/greenmid.jpg);
+	background-repeat:repeat-x;
+	width:150px;
+	height:27px;
+	margin-left:563px;
+	
+}
+#blueleft{
+	float:left;
+	background-image:url(../images/greenleft.jpg);
+	background-repeat:no-repeat;
+	height:27px;
+	width:7px;
+	float:left;
+}
+#blueright{
+	background-image:url(../images/greenright.jpg);
+	background-repeat:no-repeat;
+	height:27px;
+	width:7px;
+	float:right;
+}
+#bluemid{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	color:#6a6969;
+	font-weight:bold;
+	text-align:center;
+	padding-top:8px;
+}
+#bluemid a{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	color:#6a6969;
+	text-decoration:none;
+}
+#bluemid a:hover{
+	text-decoration:underline;
+	color:#FFFFFF;
+}
+#bluemid a.active{
+	text-decoration:underline;
+}

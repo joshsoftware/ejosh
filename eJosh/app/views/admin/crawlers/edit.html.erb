@@ -1,0 +1,25 @@
+
+<div id = "wrapper">
+  <%= render :partial => '/layouts/admin/top' %>
+  <div id = "container">
+    <%= render :partial => '/layouts/admin/category' %>
+    <div id = "rightinner">
+      <div id = "titlegreenleft">
+        <div class="greentitle"><img src="/images/content.png" style="vertical-align:middle; margin-right:8px;" />Navigation Management</div>
+      </div>
+          <br/><br/>
+          <% form_for @crawler, :url =>  admin_crawler_path(@crawler), :method => :put, :html => {:multipart => true} do |crawler| %>
+        <div id = "matterinner" style="height:350px;">
+          <tr>
+            <td colspan="3" align="left" valign="top" bgcolor="#cfeb79"><div class="greentitle">Crawler - Add New Script</div></td>
+          </tr>
+          <%= render :partial => 'form', :locals => { :crawler => crawler } %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div style="clear:both"></div>
+</div><br/><br/><br/>
+  </div>
+
+

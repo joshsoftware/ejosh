@@ -1,0 +1,15 @@
+<div id="cont">
+<div id="cont_mid">
+	<div id="cont_top"></div>
+    
+        <div id="inner">
+          <% for page_section in @page_sections %>
+            <div class="inner_left" style="width:90%;padding:10px 10px 20px 10px;" >
+              <%= page_section.is_processing_reqd ? process_erb_data(page_section.content) : page_section.content if page_section%>
+            </div>
+            <div style="clear:both"></div>
+          <% end %>
+        </div>
+</div>
+<div id="cont_bot"></div>
+</div>

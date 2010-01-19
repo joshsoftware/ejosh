@@ -1,0 +1,28 @@
+<form>
+  <table width="531" border="0" cellspacing="0" cellpadding="0" style="background-color:#f7f7f7; border:0px solid #83954e;">
+    <br/>
+    <tr>
+      <td align="right" valign="middle"  style="padding-right:9px;"><strong>Name : </strong></td>
+      <td align="left" valign="middle" class="tablelinks"><label>
+          <%= crawler.text_field :name, :class =>"text" %>
+        </label>  
+      </td>
+    </tr>
+    <tr>
+      <td align="right" valign="middle"  style="padding-right:9px;"><strong>Script : </strong></td>
+      <td align="left" valign="middle" class="tablelinks"><label>
+          <%= crawler.text_area :script,:class =>"text", :size => "50x10" %>
+        </label>  
+      </td>
+    </tr>
+    <tr>
+      <td align="right" valign="middle">&nbsp;</td>
+      <td align="left" valign="middle" class="tablelinks">
+        <div class="greenbut" style="margin-left:0px;"><%= submit_tag 'SAVE', :class => "greensubbut"%></div>
+        <div class="greenbut" style="margin-left:20px;"><%= link_to 'CANCEL', admin_crawlers_path %></div>	</td>
+    </tr>
+  </table> 
+</form>
+</div>
+<div id = "rightinnerbottom"></div>
+

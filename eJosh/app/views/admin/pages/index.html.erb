@@ -1,0 +1,74 @@
+<%= javascript_include_tag 'thickbox' %>
+	<div id = "wrapper">
+    <%= render :partial => '/layouts/admin/top' %>
+		<div id = "container">
+      <%= render :partial => '/layouts/admin/category' %>
+			<div id = "rightinner">
+			<div id = "titlegreenleft">
+			  <div class="greentitle"><img src="/images/content.png" style="vertical-align:middle; margin-right:8px;" />Content Management</div>
+			</div>
+			<br/><br/>
+      <div id = "matterinner" style="min-height:650px">
+        <div id = "innerlinks">
+          <span class="link"><%= link_to "Page Section" + get_help("section"), admin_page_sections_path %></span> |
+          <span class="link"><%= link_to "Category" + get_help("category"), admin_categories_path %></span> |
+          <span class="link"><%= link_to "Page" + get_help("page"), admin_pages_path, :class => "selected" %></span> 
+        </div>
+			  <br/>
+        <h3> Pages </h3>
+			  <br/>
+				<% form_for @page, :url => add_admin_pages_path, :builder => BbFormBuilder do |f|%>
+        <table>
+        <tr>
+          <h4>Add a new page using an existing template.</h4>
+        </tr>
+        <tr>
+        <td width="26%"> <%= link_to image_tag(src = "/images/templates/3/large_thumb/home#{$THEME}.jpg", :style=>"height:100px;width:130px;"), add_admin_pages_path, :onclick => "{toggle_inline('add_page_title');$('#id').val(1); return false;}" %></td>
+        <td width="26%"> <%= link_to image_tag(src = "/images/templates/2/large_thumb/features#{$THEME}.jpg", :style=>"height:100px;width:130px;"), add_admin_pages_path, :onclick => "{toggle_inline('add_page_title');$('#id').val(2);  return false;}" %></td>
+        <td width="26%"> <%= link_to image_tag(src = "/images/templates/1/large_thumb/aboutus#{ $THEME }.jpg", :style=>"height:100px;width:130px;"), add_admin_pages_path, :onclick => "{toggle_inline('add_page_title');$('#id').val(3); return false;}" %></td>
+        <td width="26%"> <%= link_to image_tag(src = "/images/templates/4/large_thumb/blank#{ $THEME }.jpg", :style=>"height:100px;width:130px;"), add_admin_pages_path, :onclick => "{toggle_inline('add_page_title');$('#id').val(4); return false;}" %></td>
+        </tr>
+        </table>
+        <div id='add_page_title', style="display:none; width:300px">
+          <table>
+            <tr>
+              <td width="30%">Page Title: <%= f.text_field "title", :class => "text", :size => 26 %></td>
+              <%= hidden_field_tag :id, '' %>
+              <td width="30%"><%= submit_tag 'Add Page', :onclick => "if (validate_fields('input', 'add_page_title')){ alert('Title cannot be blank.'); return false;} ",:class => "greensubbut", :style => "margin-top:29px"%></td>
+            </tr>
+          </table>
+        </div>
+        <% end %>
+			  <br/>
+        <%= render :partial => 'search'  %>  
+			  <br/>
+			  <table width="601" border="1" cellspacing="0" cellpadding="0" bordercolor="#c5c3c3">
+                <tr>
+                  <th width="54" align="center" valign="middle">Sr. No.&nbsp;</td>
+                  <th width="210" align="center" valign="middle">Page Title </th>
+                  <th width="170" align="center" valign="middle">Link</th>
+                  <th width="157" align="center" valign="middle">Action</th>
+                </tr>
+                <% for page in @pages %>
+                <tr>
+                  <td align="center" valign="middle"><%= page.id %></td>
+                  <td align="center" valign="middle"><%= page.title %></td>
+                  <td align="center" valign="middle"><%= link_to 'preview', general_path(:page => page.name, :height => 520, :width => 1100), :class => "thickbox" %></td>
+                  
+              	  <td align="center" valign="middle" class="tablelinks"><%= link_to 'Manage', edit_admin_page_path(page) %><% if !page.is_default %> |  <%= link_to 'Delete', admin_page_path(page), :method => :delete %><% end %></a>
+                  
+                </tr>
+                <% end %>
+              </table>
+              <%= will_paginate @pages  %>  
+			  <br/>
+        <div class="greenbut" style="margin-left:250px; _margin-left:120px;"><%#= link_to 'Add New Page', new_admin_page_path %></div>
+			  <br/>
+			  
+			</div>
+						<div id = "rightinnerbottom"></div>
+			</div>
+			
+			<div style="clear:both"></div>
+		</div><br/><br/><br/>
+	</div>

@@ -1,0 +1,31 @@
+
+<%= process_erb_data(PageSection.find_by_title('Custom Content Theme1').content) if $THEME == 1%>
+
+<% j = 0%>
+<div id = "container">
+	<div id="borbig"></div>
+        <% for i in 0..loop_count(@page_sections) %>                             
+          <% if j < @page_sections.count %>
+          <div class = "containerleft">
+            <%= @page_sections[j].is_processing_reqd ? process_erb_data(@page_sections[j].content) : @page_sections[j].content %>
+            <% j =  j + 1 %>
+          </div>
+          <% end %>
+          <% if j < @page_sections.count %>
+          <div class ="containerright">
+            <div class = "black">
+              <div class = "blackleft"></div>
+              <div class = "blackright"></div>
+              <div class = "blackmid">
+                <%= @page_sections[j].is_processing_reqd ? process_erb_data(@page_sections[j].content) : @page_sections[j].content %>
+                <% j =  j + 1 %>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        <% end %>
+   <div class="cleardiv"/>
+   <div style="clear:both"></div>
+   </div><br/><br/>
+</div>
+

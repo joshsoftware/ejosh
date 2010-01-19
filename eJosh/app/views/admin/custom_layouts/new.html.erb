@@ -1,0 +1,55 @@
+<div id = "wrapper">
+  <%= render :partial => '/layouts/admin/top' %>
+  <div id = "container">
+    <%= render :partial => '/layouts/admin/category' %>
+    <div id = "rightinner">
+      <div id = "titlegreenleft">
+        <div class="greentitle"><img src="/images/nav.png" style="vertical-align:middle; margin-right:8px;" />Custom Layouts</div>
+      </div>
+      <br/><br/>
+      <div id = "matterinner">
+        <br/><br/>
+        <div>
+          <% form_for(@layout, :url =>  admin_custom_layouts_path, :method => :post, :html => {:multipart => true} ) do |layout| %>
+            <table width="531" border="0" cellspacing="0" cellpadding="0" style="background-color:#f7f7f7; border:1px solid #83954e;">
+              <tr>
+                <td colspan="2" align="left" valign="top" bgcolor="#cfeb79">
+                  <div class="greentitle"> Add New Layout </div>
+                </td>
+              </tr>
+              <tr>
+                <td align="right" valign="middle"><strong>Name  : </strong></td>
+                <td align="left" valign="middle" class="tablelinks"><label>
+                    <%= layout.text_field :name, :style => "width:273px; border:1px solid #a1a0a0; background-color:#f7f7f7; margin-left:29px;"%>
+                </label></td>
+              </tr>
+              <tr>
+                <td align="right" valign="middle"><strong>Browse image  : </strong></td>
+                <td align="left" valign="middle" class="tablelinks">
+                  <%= layout.file_field "image", :size => 20, :style => "width:273px; border:1px solid #a1a0a0; background-color:#f7f7f7; margin-left:29px;" %>	
+                </td>
+              </tr>
+              <tr>
+                <td align="right" valign="middle">&nbsp;</td>
+                <td align="left" valign="middle" class="tablelinks">
+                  <div class="greenbut" style="margin-left:57px;">
+                    <%= submit_tag "OK" %>
+                  </div>
+                  <div class="greenbut" style="margin-left:20px;">
+                    <%= link_to "CANCEL" , admin_custom_layouts_path%>
+                  </div>	
+                </td>
+              </tr>
+
+
+            </table> 
+          <% end %>
+        </div>
+      </div>
+          <div id = "rightinnerbottom"></div>
+      <br/>
+    </div>
+  </div>
+  <div style="clear:both"></div>
+</div><br/><br/><br/>
+</div>

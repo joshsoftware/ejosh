@@ -1,0 +1,13 @@
+	<div id = "containerinner">
+	<div id="borbig"></div>
+    <%= render :partial => 'category2_theme1' %>
+		<div id ="containerrightinner">
+      <% for page_section in @page_sections %>
+        <%= page_section.is_processing_reqd ? process_erb_data(page_section.content) : page_section.content if page_section%>
+        <% if page_section != @page_sections.last  %> 
+          <div id="borbig1"></div><br/>
+        <% end %>  
+      <% end %>
+		</div>
+		<div style="clear:both"></div>
+	</div>

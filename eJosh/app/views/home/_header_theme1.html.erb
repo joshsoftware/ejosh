@@ -1,0 +1,29 @@
+
+<div id = "top">
+  <div id="topleft">
+    <%= link_to (image_tag @site.logo.url(:layout_1), :title =>  @site.company_name, :alt => @site.company_name, :style => "border:none" ), '/'if @site %>
+  </div>
+  <div id="topright">
+    <div id = "greynav">
+      <div id = "greyleft"></div>
+      <div id = "greyright"></div>
+      <div id = "greymid">
+        <% for quicklink in @quicklinks %>
+          <%= "|" if @quicklinks.first != quicklink %>
+          <%= link_to quicklink.display_name, general_path(:page => quicklink.page.name) %> 
+        <% end %>
+      </div>
+    </div>
+    <div id = "tag"><em><%= @site.tagline if @site %></em></div>
+  </div>
+</div>
+<div id ="greennav">
+  <div id ="greenleft"></div>
+  <div id ="greenright"></div>
+  <div id ="greenmid" style="float:right">
+    <% for header in @headers %>
+      <%= link_to header.display_name, general_path(:page => header.page.name) %>
+    <% end %>
+  </div>
+</div>
+

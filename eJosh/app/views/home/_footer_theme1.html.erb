@@ -1,0 +1,12 @@
+
+	<div id = "footer">
+		<div id = "footerleft"></div>
+		<div id = "footerright"></div>
+		<div id = "footermid">
+      <% for footer in @footers %>
+        <%= "|" if @footers.first != footer%>
+        <%= link_to footer.display_name, general_path(:page => footer.page.name) %>
+      <% end %>
+       <br/><br/><%= @site.copyright_info if @site %> <span style='padding-left:600px;'><%= JOSH_FOOTER %></span>
+    </div>
+	</div>

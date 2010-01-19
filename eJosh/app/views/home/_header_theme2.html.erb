@@ -1,0 +1,22 @@
+
+<div id = "shell">
+	<div id = "middle">
+        <div id = "left"></div>
+        <div id = "right"></div>
+        <% for header in @headers %>
+          <%#= link_to header.display_name, general_path(:page => header.page.name, :content => header.page.contents.first.title) %>
+          <%= link_to header.display_name, general_path(:page => header.page.name) %>
+        <% end %>
+    </div>
+</div>
+<div id="mid">
+		<div id="mid_top"></div>
+   		<div id="mid_mid">
+    		<div id="logo">
+          <%= image_tag @site.logo.url(:layout_2), :title =>  @site.company_name, :alt => @site.company_name if @site %>
+        </div>
+            <div id="tag_line"><%= @site.tagline if @site %></div>
+            <div style="clear:both;"></div>
+    	</div>	
+      <div id="mid_bot"></div>
+</div>
