@@ -1,9 +1,0 @@
-
-<ul class="cloud">
-	<% tag_cloud @category_tags, %w( size1 size1 size2 size3 size4 ) do |tag, css_class| %>
-  <li>
-  <%= link_to tag, sub_general_path(:page => @page.name, :category => get_category_permalink_with_tag(tag.name)), :class =>  css_class, :title => "#{tag.count} views" %>
-  </li>
-	<% end %>
-</ul>
-
