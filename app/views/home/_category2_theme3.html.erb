@@ -1,0 +1,19 @@
+
+<div id = "leftinner">
+  <% if @page.category_tag_cloud %>
+    <div id = "leftnav_tags">
+      <%= render :partial => 'category_tag_cloud' if !@category_tags.empty?  %>
+    </div>
+  <% else %>
+    <div id = "leftnav">
+      <% for category in @categories %>
+        <%= link_to category.display_name, sub_general_path(:page =>  @page.name, :category => get_category_permalink(category)), :class => check_active(@page, category) %>
+      <% end %>
+    </div>
+  <% end %>
+  <% if @page.tag_cloud %>
+    <div id = "leftnav_tags" style="margin-top:30px;">
+      <%= render :partial => 'tag_cloud' if !@tags.empty?  %>
+    </div>
+  <% end %>
+</div>

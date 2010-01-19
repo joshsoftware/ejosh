@@ -1,0 +1,64 @@
+<div id = "wrapper">
+  <%= render :partial => '/layouts/admin/top' %>
+  <div id = "container">
+    <%= render :partial => '/layouts/admin/category' %>
+    <div id = "rightinner">
+      <div id = "titlegreenleft">
+        <div class="greentitle"><img src="/images/nav.png" style="vertical-align:middle; margin-right:8px;" />Navigation Management</div>
+      </div>
+      <br/><br/>
+      <div id = "matterinner">
+        <br/><br/>
+        <div>
+          <% form_for @navigation, :url =>  admin_navigation_path(@navigation, :scope => params[:scope], :method => :put), :builder => BbFormBuilder   do |navigation| %>
+            <table width="531" border="0" cellspacing="0" cellpadding="0" style="background-color:#f7f7f7; border:1px solid #83954e;">
+              <tr>
+                <td colspan="2" align="left" valign="top" bgcolor="#cfeb79">
+                  <div class="greentitle"> Edit Menu Item </div>
+                </td>
+              </tr>
+              <tr>
+                <td align="right" valign="middle"><strong>Sr. No.  : </strong></td>
+                <td align="left" valign="middle" class="tablelinks" style="padding-left:30px;">
+                    <label><%= @navigation.id %></label>    
+                </td>
+              </tr>
+              <tr>
+                <td align="right" valign="middle"><strong>Name  : </strong></td>
+                <td align="left" valign="middle" class="tablelinks"><label>
+                    <%= navigation.text_field :display_name, :style => "width:273px; border:1px solid #a1a0a0; background-color:#f7f7f7; margin-left:29px;"%>
+                </label></td>
+              </tr>
+              <tr>
+                <td align="right" valign="middle"><strong>Link To Page  : </strong></td>
+                <td align="left" valign="middle" class="tablelinks"><label>
+                    <%= navigation.select :page_id, Page.all.collect { |p| [p.title, p.id] } ,{}, :style => "width:273px; border:1px solid #a1a0a0; background-color:#f7f7f7; margin-left:29px;" %>
+                  </label>
+                </td>
+
+<!--                <td align="right" valign="middle"><strong>Link To Page  : </strong></td>
+                <td align="left" valign="middle" class="tablelinks">
+                  <input type="file" name="filefield" style="width:273px; border:1px solid #a1a0a0; background-color:#f7f7f7; margin-left:29px;" />	</td>-->
+              </tr>
+              <tr>
+                <td align="right" valign="middle">&nbsp;</td>
+                <td align="left" valign="middle" class="tablelinks">
+                  <div class="greenbut" style="margin-left:57px;">
+                    <%= submit_tag "OK", :class => "greensubbut" %>
+                  </div>
+                  <div class="greenbut" style="margin-left:20px;">
+                    <%= link_to "CANCEL" , admin_navigations_path(:scope => params[:scope])%>
+                  </div>	
+                </td>
+              </tr>
+            </table> 
+          <% end %>
+        </div>
+      </div>
+    <div id = "rightinnerbottom"></div>
+      <br/>
+    </div>
+  </div>
+  <div style="clear:both"></div>
+</div><br/><br/><br/>
+</div>

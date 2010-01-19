@@ -1,0 +1,49 @@
+<div id = "wrapper">
+  <%= render :partial => '/layouts/admin/top' %>
+  <div id = "container">
+    <%= render :partial => '/layouts/admin/category' %>
+    <div id = "rightinner">
+      <div id = "titlegreenleft"><div class="greentitle"><img src="/images/users.png" style="vertical-align:middle; margin-right:8px;" />Users Management</div></div>
+      <br/><br/>
+      <div id = "matterinner">
+        <div id = "innerlinks">
+          <%= link_to "Add Users", new_user_path, :class => "active"  %> |  
+          <%= link_to "Manage Users", users_path, :class => "active"  %>  
+        </div>
+        <br/><br/>
+        <table width="601" border="1" cellspacing="0" cellpadding="0" bordercolor="#c5c3c3">
+          <tr>
+            <th width="53" align="center" valign="middle">Sr. No.&nbsp;</td>
+            <th width="240" align="center" valign="middle">User Name</th>
+            <th width="127" align="center" valign="middle">Role</th>
+            <th width="127" align="center" valign="middle">Active</th>
+            <th width="171" align="center" valign="middle">Action</th>
+          </tr>
+          <% @users.each do |user|  %>  
+            <tr>
+              <td align="center" valign="middle"><%= user.id %></td>
+              <td align="center" valign="middle"><%= user.login %> </td>
+              <td align="center" valign="middle"><%= user.role.title  %></td>
+              <td align="center" valign="middle">
+                <% if user.is_active %>
+                  <%= link_to image_tag("right.jpg", :alt => "Enabled", :border => 0, :title => "Deactivate"), activate_user_path(user, :scope => false) %>
+                <% else %>
+                  <%= link_to image_tag("cross.jpg", :alt => "Enabled", :border => 0, :title => "Activate"), activate_user_path(user, :scope => true) %>
+                <% end %>
+              </td>
+              <td align="center" valign="middle" class="tablelinks">
+                <%= link_to "Edit", edit_user_path(user)  %> |
+                <%= link_to "Delete", user_path(user), :method => :delete  %>  
+              </td>
+            </tr>
+          <% end %>  
+        </table>
+        <%= will_paginate @users  %>  
+        <br/>
+      </div>
+      <div id = "rightinnerbottom"></div>
+    </div>
+    <div style="clear:both"></div>
+  </div><br/><br/><br/>
+</div>
+

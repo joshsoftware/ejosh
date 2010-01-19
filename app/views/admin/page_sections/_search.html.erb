@@ -1,0 +1,7 @@
+<% form_tag admin_page_sections_path, { :id => "page_section_search", :method => :get } do %>
+  <form action="">
+    <div  align="right" style="padding-right:15px">
+      <%= text_field_tag :ps, {},{ :value => params[:ps], :style => "vertical-align:middle;"}%>
+      <%= image_tag("search_ico.gif", :alt => "Search",  :onclick => "$('#page_section_search').submit();", :style => "cursor:pointer;vertical-align:middle;", :title => "Search" )%>
+    </div>
+  <% end %>

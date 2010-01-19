@@ -1,0 +1,27 @@
+
+    <tr>
+      <td align="right" valign="middle" style="padding-right:9px;"><strong>Tags: </strong></td>
+      <td align="left" valign="middle" class="tablelinks" width="30%">
+           <%= f.text_field( :tag_list, :class => :text, :id => :tags, :size => 50 ) %>  </td>
+    </tr>
+       <tr>
+          <td></td>
+          <td style="padding-right:9px;">
+	             <ul class="cloud">
+                <% if not @tags.empty? %>
+                  <% tag_cloud @tags, %w( size1 size1 size2 size3 size4 size5 size6 ) do |tag, css_class| %>
+                    <li><%= link_to tag.name, '#', :title => tag.name, :class => css_class, :title => "#{tag.count} items" %></li>
+                  <% end %>
+                <% end %>
+		          </ul> 
+          </td>
+        </tr>
+<script type="text/javascript">
+$('ul.cloud a').click(function() {
+    if ($('#tags').attr('value') == '')
+    $('#tags').attr('value', $(this).html());
+    else
+    $('#tags').attr('value', $('#tags').attr('value')+', '+$(this).html());
+    return false; 
+    });
+</script>

@@ -1,0 +1,42 @@
+<%= javascript_include_tag 'thickbox' %>
+<form><table width="531" border="0" cellspacing="0" cellpadding="0" style="background-color:#f7f7f7; border:0px solid #83954e;">
+    <br/>
+    <tr>
+      <td align="right" valign="middle"  style="padding-right:9px;"><strong>Name:</strong></td>
+      <td align="left" valign="middle" class="tablelinks"><label>
+          <%= f.text_field "display_name", :class =>"text" %>
+        </label>  
+      </td>
+    </tr>
+    <tr>
+      <td align="right" valign="middle"  style="padding-right:9px;"><strong>Title:</strong></td>
+      <td align="left" valign="middle" class="tablelinks"><label>
+          <%= f.text_field "title", :class =>"text" %>
+        </label>  
+      </td>
+    </tr>
+    <tr>
+      <td align="right" valign="middle" style="padding-right:9px;"><strong>Code: </strong></td>
+      <td align="left" valign="middle" class="tablelinks" width="30%">
+      <%= f.check_box "is_processing_reqd", :title => 'User is entirely responible for the code!' %>   </td>
+    </tr>
+      <%= render :partial => 'create_tags', :locals => {:f => f}%>
+    <tr>
+      <td align="left" valign="middle" ></td>
+      <td align="left" valign="middle" class="tablelinks">
+        <%= f.text_area "content", :class =>'text mceEditor', :id => :content, :rows => 15, :cols => 50%>   
+      </td>
+    </tr>
+      <td align="right" valign="middle">&nbsp;</td>
+      <td align="left" valign="middle" class="tablelinks">
+        <div class="greenbut" style="margin-left:0px;"><%= submit_tag 'SAVE', :class => "greensubbut"%></div>
+        <div class="greenbut" style="margin-left:20px;"><%= link_to 'CANCEL', admin_page_sections_path %></div>	
+        <div class="greenbut" style="margin-left:20px;">
+          <%= link_to_function 'PREVIEW', "submitform('#{preview_admin_page_sections_path}')", :class => "thickbox" %></div>
+      </td>
+    </tr>
+  </table> 
+</form>
+</div>
+<div id = "rightinnerbottom"></div>
+

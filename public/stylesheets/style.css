@@ -1,0 +1,206 @@
+/* RESET */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code, del, dfn, em,
+img, ins, kbd, q, samp, small, strike, strong, sub, sup,
+tt, var, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; outline: 0; vertical-align: baseline; background: transparent; }
+table { border-spacing: 0; border-collapse: collapse; }
+caption, th, td { text-align: left; font-weight: normal; }
+blockquote, q { quotes: none; }
+:focus { outline: 0; }
+/* COMMON */
+body {
+  	font-family: Helvetica, Arial, sans-serif;
+  	line-height: 1.4;
+  	color: #4b4b4b;
+  	background: #e4e4e4;
+	margin-bottom: 20px;
+}
+
+.clear {
+	clear: both;
+	margin: 0;
+	padding: 0;
+	line-height: 0;
+}
+
+a {
+  color: #2d7bb2;
+  text-decoration: none;
+  outline: none;
+}
+a:hover {
+  color: #4b4b4b;
+}
+#errorExplanation {
+  margin: 10px 0 0 0;
+  padding: 10px 10px;
+  background: #ffd7d7;
+  -webkit-border-radius: 5px;
+}
+#errorExplanation h2 {
+	font-size: 1em;
+}
+
+#errorExplanation p {
+	font-size: 0.9em;
+	margin-bottom: 5px;
+}
+
+#errorExplanation ul {
+	font-size: 0.9em;
+}
+
+#errorExplanation li {
+	margin-left: 20px;
+}
+
+.fieldWithErrors input {
+	background: #ffd7d7;
+}
+
+#signup-box {
+	color: #000;
+	background: #ffe640;
+	text-align: center;
+	margin: 20px 0;
+	padding: 0;
+}
+
+#signup-box a {
+	color: #990000;
+    font-weight: bold;
+}
+
+#signup-box p {
+	padding: 10px;
+}
+
+#menu {
+	font-size: 0.85em;
+	color: #aeaeae;
+	text-align: center;
+	padding: 0 0 20px 0;
+}
+
+#menu a {
+	background: url(../images/single-dot.gif) 0 50% no-repeat;
+	margin-left: 6px;
+	padding-left: 16px;
+}
+
+#menu a.first {
+	background: none;
+	margin: 0;
+	padding: 0;
+}
+
+#page-content, #page-content-wide {
+  padding: 40px 60px;
+  margin: 30px auto;
+  width: 400px;
+  background: url(../images/ear-big.gif) 0 0 no-repeat #fff;
+}
+
+#page-content-wide {
+  width: 700px;
+}
+
+#logo {
+  text-align: center;
+}
+
+.button {
+    font-family: Helvetica, Arial, sans-serif;
+	font-size: 0.9em;
+	margin: 0;
+	color: #fff;
+	font-weight: bold;
+	background: #2D7BB2;
+	border: 2px solid #2D7BB2;
+	padding: 0.25em 6px;
+	cursor: pointer;
+	-webkit-border-radius: 5px;
+    float:right;
+}
+
+.button:hover {
+  border-color: #5B605D;
+  background: #5B605D;
+}
+
+#footer {
+	text-align: center;
+}
+
+#footer p {
+  margin-top: 4px;
+  font-size: 0.70em;
+  color: #aeaeae;
+}
+
+.form_note {
+	color: #ccc;
+	font-size: 0.8em;
+}
+
+/* LOGIN */
+#login-page p {
+   padding-top: 15px;
+}
+
+#login-page p#error, #login-page p#notice {
+  	text-align: center;
+  	margin: 10px 0 0 0;
+  	padding: 4px 10px;
+  	background: #ffd7d7;
+  	-webkit-border-radius: 5px;
+}
+
+#login-page p#notice {
+  	background: #e8f4d8;
+}
+
+#login-page p#remember {
+  	font-size: 0.80em;
+}
+#login-page input#login, #login-page input#password, #login-page input#openid_identifier, #login-page input#user_email, #login-page input#user_password, #login-page input#user_password_confirmation {
+  	font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.0em;
+  	width: 100%;
+    border: 1px solid #ccc;
+    padding: 4px;
+}
+
+#login-page input#openid_identifier {
+    background: url(http://openid.net/login-bg.gif) no-repeat;
+    background-color: #fff;
+    background-position: 10px 50%;
+    color: #000;
+    padding-left: 30px;
+	width: 93%;
+}
+
+#login-page a.id-note {
+  	padding: 0;
+  	font-size: 0.75em;
+}
+
+#login-page a.new_password, #login-page a.back_to_login {
+  	font-size: 0.80em;
+  	margin-left: 10px;
+}
+
+#login-page p#signup, #login-page p#what_will_happen {
+  	border-top: 1px solid #e4e4e4;
+  	margin: 20px -60px 0 -60px;
+  	padding: 20px 60px 0;
+  	text-align: center;
+}
+
+#login-page p#what_will_happen {
+  	text-align: left;
+}
+

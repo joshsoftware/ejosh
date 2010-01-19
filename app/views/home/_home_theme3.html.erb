@@ -1,0 +1,25 @@
+
+<% j = 0%>
+<div id = "container">
+	<div id="borbig"></div>
+        <% for i in 1..loop_count(@page_sections) %>                             
+          <% if j < @page_sections.count %>
+          <div id = "left">
+            <%= @page_sections[j].is_processing_reqd ? process_erb_data(@page_sections[j].content) : @page_sections[j].content %>
+            <% j =  j + 1 %>
+            <div id = "shadow"></div>			
+          </div>
+          <% end %>
+          <% if j < @page_sections.count %>
+          <div id = "right">
+            <%= @page_sections[j].is_processing_reqd ? process_erb_data(@page_sections[j].content) : @page_sections[j].content %>
+            <% j =  j + 1 %>
+            <div id="bor"></div>
+          </div>
+          <% end %>
+        <% end %>
+   <div class="cleardiv"/>
+   <div style="clear:both"></div>
+   </div><br/><br/>
+</div>
+

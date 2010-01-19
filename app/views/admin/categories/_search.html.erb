@@ -1,0 +1,7 @@
+<% form_tag admin_categories_path, { :id => "category_search", :method => :get } do %>
+  <form action="">
+    <div  align="right" style="padding-right:15px">
+      <%= text_field_tag :pc, {},{ :value => params[:pc], :style => "vertical-align:middle;"}%>
+      <%= image_tag("search_ico.gif", :alt => "Search",  :onclick => "$('#category_search').submit();", :style => "cursor:pointer;vertical-align:middle;", :title => "Search" )%>
+    </div>
+  <% end %>

@@ -1,0 +1,25 @@
+
+	<div id = "wrapper">
+        <%= render :partial => '/layouts/admin/top' %>
+		<div id = "container">
+            <%= render :partial => '/layouts/admin/category' %>
+			<div id = "rightinner">
+			  <div id = "titlegreenleft">
+			    <div class="greentitle"><img src="/images/content.png" style="vertical-align:middle; margin-right:8px;" />Content Management</div>
+			  </div>
+			  <br/><br/>
+				  <% form_for( @page, :url => admin_pages_path, :method => :post, :builder => BbFormBuilder ) do |f| %>
+						<%#= link_to "Back", admin_pages_path, :class => "al-normal right" %>
+            <div id = "matterinner" style="height:450px;">
+            <tr>
+            <td colspan="3" align="left" valign="top" bgcolor="#cfeb79"><div class="greentitle">Section - Add New Page</div></td>
+            </tr>
+						<%= render :partial => 'form', :locals => { :f => f, :manage => false } %>
+            </div>
+				  <% end %>
+			 </div>
+     </div>
+	</div>
+			<div style="clear:both"></div>
+		</div><br/><br/><br/>
+	</div>

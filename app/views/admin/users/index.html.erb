@@ -1,0 +1,204 @@
+	<div id = "wrapper">
+    <%= render :partial => '/layouts/admin/top' %>
+		<div id = "container">
+      <%= render :partial => '/layouts/admin/submenu' %>
+			<div id = "rightinner">
+			<div id = "titlegreenleft"><div class="greentitle"><img src="/images/users.png" style="vertical-align:middle; margin-right:8px;" />Users Management</div></div>
+			<br/><br/>
+			<div id = "matterinner">
+			  <div id = "innerlinks">
+				<a href="createuser.html">Add Users</a> |
+			  <a href="#" class="active">Manage Users</a>			  </div>
+			  <br/><br/>
+			  <table width="601" border="1" cellspacing="0" cellpadding="0" bordercolor="#c5c3c3">
+                <tr>
+                  <th width="53" align="center" valign="middle">Sr. No.&nbsp;</td>
+                  <th width="240" align="center" valign="middle">User Name</th>
+                  <th width="127" align="center" valign="middle">Role</th>
+                  <th width="171" align="center" valign="middle">Action</th>
+                </tr>
+                <tr>
+                  <td align="center" valign="middle">1</td>
+                  <td align="center" valign="middle">User Name 1</td>
+                  <td align="center" valign="middle">Role 1</td>
+                  <td align="center" valign="middle" class="tablelinks"><a href="#" rel="#overlay10">Edit</a> |  <a href="#" rel="#overlay11">Delete</a>
+				  <div class="overlay10" id="overlay10">
+				<form><table width="531" border="0" cellspacing="0" cellpadding="0" style="background-color:#f7f7f7; border:1px solid #83954e;">
+  <tr>
+    <td colspan="2" align="left" valign="top" bgcolor="#cfeb79"><div class="greentitle"><img src="/images/user.png" style="vertical-align:middle; margin-right:8px;" />Edit User</div></td>
+  </tr>
+  <tr>
+    <td align="right" valign="middle"><strong>User Name : </strong></td>
+    <td align="left" valign="middle" class="tablelinks"><label>
+      <input type="text" name="textfield" style="width:273px; border:1px solid #a1a0a0; background-color:#f7f7f7; margin-left:29px;" />
+      </label>    </td>
+  </tr>
+  <tr>
+    <td align="right" valign="middle"><strong>Password : </strong></td>
+    <td align="left" valign="middle" class="tablelinks"><label>
+      <input type="password" name="textfield" style="width:273px; border:1px solid #a1a0a0; background-color:#f7f7f7; margin-left:29px;" />
+      </label>    </td>
+  </tr>
+  <tr>
+    <td align="right" valign="middle"><strong>Confirm Password : </strong></td>
+    <td align="left" valign="middle" class="tablelinks"><label>
+      <input type="password" name="textfield" style="width:273px; border:1px solid #a1a0a0; background-color:#f7f7f7; margin-left:29px;" />
+      </label>    </td>
+  </tr>
+  <tr>
+    <td align="right" valign="middle"><strong>Role : </strong></td>
+    <td align="left" valign="middle" class="tablelinks">
+        <label>
+        <select name="select" style="width:273px; border:1px solid #a1a0a0; background-color:#f7f7f7; margin-left:29px;" />
+        </select>
+        </select>
+        </label>
+   </td>
+  </tr>
+  <tr>
+    <td align="right" valign="middle"><strong>Activate ? : </strong></td>
+    <td align="left" valign="middle" class="tablelinks">
+        <input name="" type="checkbox" value="" style="background-color:#f7f7f7; margin-left:29px;" />
+    </td>
+  </tr>
+  <tr>
+    <td align="right" valign="middle">&nbsp;</td>
+    <td align="left" valign="middle" class="tablelinks">
+	 <div class="greenbut" style="margin-left:17px;"><a href="#">SUBMIT</a></div>
+	 <div class="greenbut" style="margin-left:20px;"><a href="#">CANCEL</a></div>	</td>
+  </tr>
+</table> </form>
+
+				</div>
+				<script>
+				$(function() {		
+					$("a[rel]").overlay();			
+				});
+				/*$(function() {         
+         
+					// assign a click event to the exposed element. normal jQuery coding 
+					$("a[rel]").click(function() { 
+							 
+						// this simple call performs exposing 
+						$(this).expose();         
+						//$(this).close();
+							
+						
+					}); 
+					 
+				});*/
+				
+				</script>
+				
+				
+				
+				
+				
+				
+				
+				<div class="overlay11" id="overlay11">
+				<form><table width="531" border="0" cellspacing="0" cellpadding="0" style="background-color: #f7f7f7; border:1px solid #83954e;">
+  <tr>
+    <td colspan="2" align="left" valign="top" bgcolor="#cfeb79"><div class="greentitle"><img src="/images/user.png" style="vertical-align:middle; margin-right:8px;" />Delete User ?</div></td>
+  </tr>
+  <tr>
+    <td align="right" valign="middle"><strong>User Name : </strong></td>
+    <td align="left" valign="middle" class="tablelinks"><label>
+      <input type="text" name="textfield" style="width:273px; border:1px solid #a1a0a0; background-color:#f7f7f7; margin-left:29px;" />
+      </label>    </td>
+  </tr>
+  <tr>
+    <td align="right" valign="middle"><strong>Sure To Delete This User ?</strong></td>
+    <td align="left" valign="middle" class="tablelinks">
+	 <div class="greenbut" style="margin-left:27px;"><a href="#">YES</a></div>
+	 <div class="greenbut" style="margin-left:20px;"><a href="#">NO</a></div>	</td>
+  </tr>
+</table></form>
+
+				</div>
+				<script>
+				$(function() {		
+					$("a[rel]").overlay();			
+				});
+				/*$(function() {         
+         
+					// assign a click event to the exposed element. normal jQuery coding 
+					$("a[rel]").click(function() { 
+							 
+						// this simple call performs exposing 
+						$(this).expose();         
+						//$(this).close();
+							
+						
+					}); 
+					 
+				});*/
+				
+				</script>
+				
+				
+				
+				
+				
+				
+				
+				  </td>
+				  
+                </tr>
+				
+				
+				
+                <tr>
+                  <td align="center" valign="middle">2</td>
+                  <td align="center" valign="middle">User Name 2 </td>
+                  <td align="center" valign="middle">Role 2 </td>
+                  <td align="center" valign="middle" class="tablelinks"><a href="#">Edit</a> |  <a href="#">Delete</a></td>
+                </tr>
+                <tr>
+                  <td align="center" valign="middle">3</td>
+                  <td align="center" valign="middle">User Name 3 </td>
+                  <td align="center" valign="middle">Role 3 </td>
+                  <td align="center" valign="middle" class="tablelinks"><a href="#">Edit</a> |  <a href="#">Delete</a></td>
+                </tr>
+                <tr>
+                  <td align="center" valign="middle">4</td>
+                  <td align="center" valign="middle">User Name 4 </td>
+                  <td align="center" valign="middle">Role 4 </td>
+                  <td align="center" valign="middle" class="tablelinks"><a href="#">Edit</a> |  <a href="#">Delete</a></td>
+                </tr>
+                <tr>
+                  <td align="center" valign="middle">5</td>
+                  <td align="center" valign="middle">User Name 5 </td>
+                  <td align="center" valign="middle">Role 5 </td>
+                  <td align="center" valign="middle" class="tablelinks"><a href="#">Edit</a> |  <a href="#">Delete</a></td>
+                </tr>
+                <tr>
+                  <td align="center" valign="middle">6</td>
+                  <td align="center" valign="middle">User Name 6 </td>
+                  <td align="center" valign="middle">Role 6 </td>
+                  <td align="center" valign="middle" class="tablelinks"><a href="#">Edit</a> |  <a href="#">Delete</a></td>
+                </tr>
+                <tr>
+                  <td align="center" valign="middle">7</td>
+                  <td align="center" valign="middle">User Name 7 </td>
+                  <td align="center" valign="middle">Role 7 </td>
+                  <td align="center" valign="middle" class="tablelinks"><a href="#">Edit</a> |  <a href="#">Delete</a></td>
+                </tr>
+                <tr>
+                  <td align="center" valign="middle">8</td>
+                  <td align="center" valign="middle">User Name 8 </td>
+                  <td align="center" valign="middle">Role 8 </td>
+                  <td align="center" valign="middle" class="tablelinks"><a href="#">Edit</a> |  <a href="#">Delete</a></td>
+                </tr>
+              </table>
+			  
+			  <br/>
+			  
+			  
+			</div>
+						<div id = "rightinnerbottom"></div>
+			</div>
+			
+			<div style="clear:both"></div>
+		</div><br/><br/><br/>
+	</div>

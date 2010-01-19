@@ -1,0 +1,58 @@
+
+<div id = "wrapper">
+  <%= render :partial => '/layouts/admin/top' %>
+  <div id = "container">
+    <%= render :partial => '/layouts/admin/category' %>
+    <div id = "rightinner">
+      <div id = "titlegreenleft">
+        <div class="greentitle"><img src="/images/content.png" style="vertical-align:middle; margin-right:8px;" />Content Management</div>
+      </div>
+      <br/><br/>
+      <div id = "matterinner" style="min-height:540px">
+        <div id = "innerlinks"> 
+          <span class="link"><%= link_to "Page Section" + get_help("section"), admin_page_sections_path  %></span> |
+          <span class="link"><%= link_to "Category" + get_help("category"), admin_categories_path, :class => "selected" %></span> |
+          <span class="link"><%= link_to "Page" + get_help("page"), admin_pages_path %></span> 
+        </div>
+			  <br/>
+        <h3> Categories </h3>
+			  <br/>
+        <%= render :partial => 'search'  %>  
+			  <br/>
+        <table width="601" border="1" cellspacing="0" cellpadding="0" bordercolor="#c5c3c3">
+          <tr>
+            <th width="54" align="center" valign="middle">Sr. No.&nbsp;</td>
+            <th width="94" align="center" valign="middle">Menu Item</th>
+            <th width="83" align="center" valign="middle">Enabled</th>
+            <th width="111" align="center" valign="middle">Action</th>
+          </tr>
+          <% @category_collect.each do |category| %>
+            <tr> 
+              <td align="center" valign="middle"><%= category.id %></td>
+              <td align="center" valign="middle"><%= category.display_name %></td>
+              <td align="center" valign="middle">
+                <% if category.is_enabled %>
+                  <%= link_to image_tag("right.jpg", :alt => "Enabled", :border => 0, :title => "Enable"), enable_admin_category_path(category, :state => false) %>
+                <% else %>
+                  <%= link_to image_tag("cross.jpg", :alt => "Enabled", :border => 0, :title => "Disable"), enable_admin_category_path(category, :state => true) %>
+                <% end %>
+              </td>
+              <td align="center" valign="middle" class="tablelinks">
+                <%= link_to "Edit", edit_admin_category_path(category) %>|
+                <%= link_to "Delete", admin_category_path(category), :method => "delete" %>
+              </td>
+            </tr>
+          <% end %>
+        </table>
+        <%= will_paginate @category_collect  %>  
+        <br/>
+        <div class="greenbut" style="margin-left:250px; _margin-left:120px;">
+          <%= link_to "Add New", new_admin_category_path, :rel => "#overlay10" %>
+        </div>
+        <br/> <br/>
+      </div>
+      <div id = "rightinnerbottom"></div>
+    </div>
+    <div style="clear:both"></div>
+  </div><br/><br/><br/>
+</div>
