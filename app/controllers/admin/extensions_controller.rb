@@ -41,8 +41,10 @@ class Admin::ExtensionsController < ApplicationController
   def install
     @extension = Extension.find(params[:id])
     # install the plugin
-    path = 'ruby script/plugin install ' + @extension.repository_path 
-    system(path)
+    if (!File.exist?(File.join('./vendor/plugin','employee','load.rb'))
+      path = 'ruby script/plugin install ' + @extension.repository_path 
+      system(path)
+    end
 
     # execute the load.rb file from installed plugin to run the generators (migration etc)
     path = 'ruby vendor/plugins/' + @extension.display_name + '/load.rb ' + @extension.id.to_s
