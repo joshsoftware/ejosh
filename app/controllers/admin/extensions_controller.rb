@@ -32,7 +32,7 @@ class Admin::ExtensionsController < ApplicationController
   def update_plugin
     @extension = Extension.find(params[:id])
     # install the plugin
-    path = 'ruby script/plugin install --force ' + @extension.repository_path 
+    path = 'git submodule init && git submodule update' 
     system(path)
 
     redirect_to admin_extensions_path
@@ -55,8 +55,6 @@ class Admin::ExtensionsController < ApplicationController
 
   def destroy
     @extension = Extension.find(params[:id])
-    path = 'ruby script/plugin remove ' + @extension.display_name
-    system(path)
     Extension.find(params[:id]).destroy
 
     redirect_to admin_extensions_path
