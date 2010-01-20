@@ -1,0 +1,9 @@
+[submodule "vendor/plugins/employee_management"]
+	path = vendor/plugins/employee_management
+	url = git@github.com:joshsoftware/employee_management.git
+[submodule "vendor/plugins/leave_management"]
+	path = vendor/plugins/leave_management
+	url = git@github.com:joshsoftware/leave_management.git
+[submodule "vendor/plugins/rails_tiny_mce"]
+	path = vendor/plugins/rails_tiny_mce
+	url =  git://github.com/funonrails/rails_tiny_mce.git
