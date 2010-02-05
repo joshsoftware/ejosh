@@ -35,4 +35,9 @@ class Admin::CrawlersController < ApplicationController
     redirect_to admin_crawlers_path(:scope => params[:scope])
   end
 
+  def destroy
+    Crawler.find(params[:id]).destroy
+    redirect_to admin_crawlers_path
+  end
+
 end

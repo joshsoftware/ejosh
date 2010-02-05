@@ -28,14 +28,14 @@
               <td align="center" valign="middle"><%= crawler.name %></td>
               <td align="center" valign="middle">
                 <% if crawler.is_enabled %>
-                  <%= link_to image_tag("right.jpg", :alt => "Enabled", :border => 0, :title => "Disable"), enable_admin_crawler_path(crawler, :scope => params[:scope], :state => false) %>
+                  <%= link_to image_tag("right.jpg", :alt => "Enabled", :border => 0, :title => "Disable"), enable_admin_crawler_path(crawler, :state => false) %>
                 <% else %>
-                  <%= link_to image_tag("cross.jpg", :alt => "Enabled", :border => 0, :title => "Enable"), enable_admin_crawler_path(crawler,:scope => params[:scope], :state => true) %>
+                  <%= link_to image_tag("cross.jpg", :alt => "Enabled", :border => 0, :title => "Enable"), enable_admin_crawler_path(crawler, :state => true) %>
                 <% end %>
               </td>
               <td align="center" valign="middle" class="tablelinks">
-                <%= link_to "Edit", edit_admin_crawler_path(crawler, :scope => params[:scope]) %>|
-                <%= link_to "Delete", admin_crawler_path(crawler, :scope => params[:scope]), :method => "delete" %>
+                <%= link_to "Edit", edit_admin_crawler_path(crawler) %>|
+                <%= link_to "Delete", admin_crawler_path(crawler), :method => "delete" %>
               </td>
             </tr>
           <% end %>
@@ -43,7 +43,7 @@
         <%= will_paginate @crawlers %>  
         <br/>
         <div class="greenbut" style="margin-left:270px;">
-          <%= link_to "Add New", new_admin_crawler_path(:scope => params[:scope]), :rel => "#overlay10" %>
+          <%= link_to "Add New", new_admin_crawler_path, :rel => "#overlay10" %>
         </div>
         <br/>
         <br/>
