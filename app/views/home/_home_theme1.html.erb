@@ -1,5 +1,5 @@
-
-<%= process_erb_data(PageSection.find_by_title('Custom Content Theme1').content) if $THEME == 1%>
+<% section = PageSection.find_by_title('Custom Content Theme1')  %>  
+<%= process_erb_data(section.content) if $THEME == 1 && section != nil%>
 
 <% j = 0%>
 <div id = "container">

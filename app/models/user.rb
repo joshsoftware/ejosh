@@ -2,7 +2,7 @@ require 'digest/sha1'
 class User < ActiveRecord::Base
 
   belongs_to :role
-  has_one :employee, :dependent => :destroy
+  has_one :employee
   # Virtual attribute for the unencrypted password
   attr_accessor :password
 
