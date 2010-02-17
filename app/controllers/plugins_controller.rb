@@ -3,7 +3,7 @@ class PluginsController < ApplicationController
   def index
     extension = Extension.first;
 
-    redirect_to extension.entry_point
+    redirect_to extension.entry_point if extension.entry_point
   end
 
   
