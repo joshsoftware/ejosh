@@ -63,9 +63,14 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    User.find(params[:id]).destroy
-
-    redirect_to users_path
+    if params[:id].to_i != 1
+      User.find(params[:id]).destroy
+      redirect_to session_path(:method => 'delete') if params[:id] == current_user.id 
+      redirect_to users_path
+    else
+      flash[:notice] = "Admin user can not be deleted"
+      render :action => "index"
+    end
   end
 
   def activate

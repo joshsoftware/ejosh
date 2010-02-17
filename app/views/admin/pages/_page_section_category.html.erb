@@ -14,8 +14,8 @@
   <% for psc in @page_section_categories %>
     <tr>
       <td align="center" valign="middle"><%= psc.page.title %></td>
-      <td align="center" valign="middle"><%= psc.page_section.title %></td>
-      <td align="center" valign="middle"><%= psc.category ? psc.category.display_name : '-'%></td>
+      <td align="center" valign="middle"><%= link_to psc.page_section.title, edit_admin_page_section_path(psc.page_section), :title => "edit page section"  %></td>
+      <td align="center" valign="middle"><%= psc.category ? link_to (psc.category.display_name, edit_admin_category_path(psc.category), :title => "edit category") : '-'%></td>
       <td align="center" valign="top">
         <% unless psc == @page_section_categories.first %>
           <%= link_to_remote image_tag("uparrow.jpg", :title => "Move up", :width => 11, :height => 10, :id => "up_arrow-#{psc.id}", :style => "margin-top:4px; border:none;"), :url => move_admin_pages_path(:id => psc, :mv => "up"),:loading => "show_hide('mv-spinner-#{}','up_arrow-#{psc.id}')",:complete => "show_hide('up_arrow-#{psc.id}','mv-spinner-#{}')" %>

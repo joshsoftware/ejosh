@@ -10,9 +10,9 @@
 			<br/><br/>
       <div id = "matterinner" style="min-height:650px">
         <div id = "innerlinks">
-          <span class="link"><%= link_to "Page Section" + get_help("section"), admin_page_sections_path %></span> |
+          <span class="link"><%= link_to "Page" + get_help("page"), admin_pages_path, :class => "selected" %></span> | 
           <span class="link"><%= link_to "Category" + get_help("category"), admin_categories_path %></span> |
-          <span class="link"><%= link_to "Page" + get_help("page"), admin_pages_path, :class => "selected" %></span> 
+          <span class="link"><%= link_to "Page Section" + get_help("section"), admin_page_sections_path %></span> 
         </div>
 			  <br/>
         <h3> Pages </h3>

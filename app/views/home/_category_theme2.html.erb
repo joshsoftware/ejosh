@@ -10,8 +10,12 @@
           <div class="submenu">
             <ul>
               <% for category in @categories %>
-                <li> <%= link_to "#{image_tag category.image.url(:small_thumb), :style => 'vertical-align:middle; margin-right:10px; margin-top:12px;'} <span class='sel'>#{category.display_name}</span><div class='f_text'>#{category.description}</div>", sub_general_path(:page =>  @page.name, :category => get_category_permalink(category)), :class => check_active(@page, category) %></li>
-              <% end %>
+              <% if category.image?  %>  
+                <li> <%= link_to "#{image_tag category.image.url(:small_thumb), :style => 'vertical-align:middle; margin-right:10px; margin-top:12px;'} <span>#{category.display_name}</span><br/><div style='padding-left:40px;'>#{category.description}</div>", sub_general_path(:page => @page.name, :category => get_category_permalink(category)), :class => check_active(@page, category) %></li>
+              <% else %>  
+                <li> <%= link_to "<span>#{category.display_name}</span><br/><div style='margin-left:40px;'>#{category.description}</div>", sub_general_path(:page => @page.name, :category => get_category_permalink(category)), :class => check_active(@page, category) %></li>
+              <% end %>  
+            <% end %>
             </ul>
           </div>
         </div>

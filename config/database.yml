@@ -2,7 +2,7 @@
 #   gem install sqlite3-ruby (not necessary on OS X Leopard)
 development:
   adapter: mysql 
-  database: ejosh
+  database: ejosh_test
   pool: 5
   timeout: 5000
   username: root

@@ -7,8 +7,12 @@
   <% else %>
     <div id = "leftnavl" style="text-align:left;">
       <% for category in @categories %>
-        <%= link_to "#{image_tag category.image.url(:small_thumb), :style => 'vertical-align:middle; margin-right:10px; margin-top:12px;'} <span>#{category.display_name}</span><br/>#{category.description}", sub_general_path(:page => @page.name, :category => get_category_permalink( category)), :class => check_active(@page, category) %>
-      <img alt="" src="/images/ejoshweb3/dotline.png"/>
+        <% if category.image? %>  
+          <%= link_to "#{image_tag category.image.url(:small_thumb), :style => 'vertical-align:middle; margin-right:10px; margin-top:12px;'} <span>#{category.display_name}</span><br/>#{category.description}", sub_general_path(:page => @page.name, :category => get_category_permalink( category)), :class => check_active(@page, category) %>
+        <% else %>  
+          <%= link_to "<span>#{category.display_name}</span><br/>#{category.description}", sub_general_path(:page => @page.name, :category => get_category_permalink( category)), :class => check_active(@page, category) %>
+        <% end %>  
+        <img alt="" src="/images/ejoshweb3/dotline.png"/>
       <% end %>
     </div>
   <% end %>

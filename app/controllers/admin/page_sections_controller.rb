@@ -27,11 +27,13 @@ class Admin::PageSectionsController < ApplicationController
 
   def create
     @page_section = PageSection.new(params[:page_section])
+    
     params[:page_section][:display_name] = make_url(params[:page_section][:display_name]) #Create a url
     params[:page_section][:content] = sanitize_description(params[:page_section][:content]) #sanitize_description
     if save(@page_section)
       redirect_to admin_page_sections_path
     else
+      @tags = PageSection.tag_counts_on(:tags)
       render :action => 'new'
     end
   end
@@ -47,6 +49,7 @@ class Admin::PageSectionsController < ApplicationController
     if update_fields(@page_section, params[:page_section])  
       redirect_to admin_page_sections_path
     else
+      @tags = PageSection.tag_counts_on(:tags)
       render :action => 'edit'
     end
   end

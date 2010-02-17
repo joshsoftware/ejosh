@@ -4,6 +4,7 @@
           <%= image_tag @site.logo.url(:layout_3), :title =>  @site.company_name, :alt => @site.company_name if @site %>
       </div>
 			<div id = "topright">
+        <% if !@quicklinks.empty?  %>  
 				<div id = "bluenav">
 					<div id = "blueleft"></div>
 					<div id = "blueright"></div>
@@ -13,7 +14,10 @@
               <%= link_to quicklink.display_name, general_path(:page => quicklink.page.name) %> 
             <% end %>
 					</div>
-				</div>
+        </div>
+      <% else %>  
+        <div>&nbsp;</div>
+      <% end  %>  
         <div id = "tag"><em><%= @site.tagline if @site %></em></div>
 				
 					<div id = "links" style="float:right;position:inherit;">

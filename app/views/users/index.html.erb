@@ -11,6 +11,7 @@
           <%= link_to "Manage Users", users_path, :class => "active"  %>  
         </div>
         <br/><br/>
+        <%= flash[:notice]  %>  
         <table width="601" border="1" cellspacing="0" cellpadding="0" bordercolor="#c5c3c3">
           <tr>
             <th width="53" align="center" valign="middle">Sr. No.&nbsp;</td>
@@ -32,8 +33,11 @@
                 <% end %>
               </td>
               <td align="center" valign="middle" class="tablelinks">
-                <%= link_to "Edit", edit_user_path(user)  %> | 
+                <%= link_to "Edit", edit_user_path(user)  %> 
+                <% if user.id != 1 %>  
+                | 
                 <%= link_to "Delete", user_path(user), :method => :delete, :confirm => "Are you sure?" %> 
+              <% end %>  
               </td>
             </tr>
           <% end %>  

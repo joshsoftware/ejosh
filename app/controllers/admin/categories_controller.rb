@@ -20,9 +20,11 @@ class Admin::CategoriesController < ApplicationController
   def create
     @category = Category.new(params[:category])
     @category.permalink = make_url(params[:category][:display_name]) 
-    save(@category)
-
-    redirect_to admin_categories_path
+    if save(@category)
+      redirect_to admin_categories_path
+    else
+      render :action => 'new'
+    end
   end
 
   def edit
@@ -32,9 +34,11 @@ class Admin::CategoriesController < ApplicationController
   def update 
     @category = Category.find(params[:id])
     params[:category][:permalink] = make_url(params[:category][:display_name]) 
-    update_fields(@category, params[:category])  
-
-    redirect_to admin_categories_path
+    if update_fields(@category, params[:category])  
+      redirect_to admin_categories_path
+    else
+      render :action => 'edit'
+    end
   end
 
   def destroy
